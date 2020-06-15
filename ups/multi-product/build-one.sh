@@ -2,23 +2,33 @@
 
 set -eu
 
-product=$1
+usage()
+{
+    echo Usage: $(basename $0) product src_dir build_dir install_dir
+}
 
-if [ -z "$product" ]; then
-    echo Usage: $(basename $0) project
+if [ "$#" != 4 ]; then
+    usage
     exit 1
 fi
 
+product=$1
+SRC_DIR=$2
+BUILD_DIR=$3
+INSTALL_DIR=$4
 
-SRC_DIR=$HOME/cmake-ups/app-framework-externals/src
-BUILD_DIR=$HOME/cmake-ups/app-framework-externals/build
+
+if [ ! -e "$SRC_DIR" ]; then
+    echo Source directory $SRC_DIR does not exist
+    exit 1
+fi
 
 set +eu
 source  /cvmfs/larsoft.opensciencegrid.org/products/setup
 if [ "$?" != "0" ]; then
     exit $?
 fi
-export PRODUCTS=$HOME/cmake-ups/products:$PRODUCTS
+export PRODUCTS=$INSTALL_DIR:$PRODUCTS
 set -eu
 
 mkdir -p ${BUILD_DIR}/$product
@@ -43,14 +53,14 @@ echo '========================================================================'
 echo Running top-level cmake
 # this command line is printed out by the previous step. the manual
 # setting of CC and CXX appears to be necessary because of some checks
-# done by the cet build scripts
-env CC=gcc CXX=g++ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$HOME/cmake-ups/products -DCMAKE_BUILD_TYPE=$CETPKG_TYPE ${SRC_DIR}/${product}
+# done by the cet build scripts. $CETPKG_TYPE was setup by setup_for_development
+env CC=gcc CXX=g++ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR -DCMAKE_BUILD_TYPE=$CETPKG_TYPE ${SRC_DIR}/${product}
 
 echo
 echo '========================================================================'
 echo Running make
 
-make -j3
+make -j5
 
 echo
 echo '========================================================================'
