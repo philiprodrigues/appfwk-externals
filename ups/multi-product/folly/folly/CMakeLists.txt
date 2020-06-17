@@ -4,9 +4,11 @@ ExternalProject_Add (
   folly
 
   PREFIX         folly
-  GIT_REPOSITORY https://github.com/facebook/folly
+  GIT_REPOSITORY /nashome/r/rodriges/cmake-ups/folly # https://github.com/facebook/folly
   GIT_TAG        v2020.05.25.00
   GIT_SHALLOW    ON
+
+  PATCH_COMMAND  patch -p1 < ${CMAKE_CURRENT_LIST_DIR}/folly-make-relocatable.diff
 
   BUILD_ALWAYS   OFF
   INSTALL_DIR    ${PROJECT_BINARY_DIR}/external_staging
