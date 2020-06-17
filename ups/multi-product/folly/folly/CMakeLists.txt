@@ -4,7 +4,7 @@ ExternalProject_Add (
   folly
 
   PREFIX         folly
-  GIT_REPOSITORY /nashome/r/rodriges/cmake-ups/folly # https://github.com/facebook/folly
+  GIT_REPOSITORY https://github.com/facebook/folly
   GIT_TAG        v2020.05.25.00
   GIT_SHALLOW    ON
 
