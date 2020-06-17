@@ -16,6 +16,7 @@ ExternalProject_Add (
                  -DBUILD_SHARED_LIBS=on
                  -DCMAKE_POSITION_INDEPENDENT_CODE=on
                  -DBoost_NO_BOOST_CMAKE=on -DBOOST_ROOT=$ENV{BOOST_FQ_DIR}
+                 -DBUILD_TESTS=off
 )
 
 #  We have to use relative paths for the DESTINATION (which are

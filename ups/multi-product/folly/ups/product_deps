@@ -17,14 +17,13 @@ cetbuildtools            v7_15_01	-	only_for_build
 double_conversion        v3_1_5
 fmt                      v6_2_1
 glog                     v0_4_0
-googletest               v1_8_1
 libevent                 v2_1_8
 boost                    v1_70_0
 end_product_list
 
 # Matrix of qualifiers versus dependent products
-qualifier	gcc	double_conversion       fmt             glog            googletest      libevent        boost   notes
-e19:prof	-nq-    e19:prof                e19:prof        e19:prof        e19:prof        e19:prof        e19:prof
+qualifier	gcc	double_conversion       fmt             glog            libevent        boost   notes
+e19:prof	-nq-    e19:prof                e19:prof        e19:prof        e19:prof        e19:prof
 end_qualifier_list
 
 table_fragment_begin

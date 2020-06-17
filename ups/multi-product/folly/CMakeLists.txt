@@ -37,7 +37,6 @@ find_ups_product(cetbuildtools v2_03_00)
 find_ups_product(double_conversion v3_1_5)
 find_ups_product(fmt v6_2_1)
 find_ups_product(glog v0_4_0)
-find_ups_product(googletest v1_8_1)
 find_ups_product(libevent v2_1_8)
 
 # source
