@@ -96,3 +96,21 @@ index b11ffc7..d4e5a33 100644
  
  namespace folly {
  namespace detail {
+diff --git a/CMake/folly-config.cmake.in b/CMake/folly-config.cmake.in
+index 1689f9a..b72ff3b 100644
+--- a/CMake/folly-config.cmake.in
++++ b/CMake/folly-config.cmake.in
+@@ -29,6 +29,13 @@ set(FOLLY_LIBRARIES Folly::folly)
+ 
+ # Find folly's dependencies
+ find_dependency(fmt)
++find_dependency(glog)
++find_dependency(double-conversion)
++find_dependency(OpenSSL)
++find_dependency(LibLZMA)
++find_dependency(BZip2)
++find_dependency(Libevent)
++
+ 
+ set(Boost_USE_STATIC_LIBS "@FOLLY_BOOST_LINK_STATIC@")
+ find_dependency(Boost 1.51.0 MODULE
