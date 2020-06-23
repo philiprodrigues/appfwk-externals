@@ -9,8 +9,8 @@ ExternalProject_Add (
   ers
 
   PREFIX         ers
-  GIT_REPOSITORY https://github.com/philiprodrigues/ers
-  GIT_TAG        dune/ers-00-26-00-cmake
+  GIT_REPOSITORY https://github.com/DUNE-DAQ/ers
+  GIT_TAG        dune/ers-00-26-00-a
   GIT_SHALLOW    ON
 
   BUILD_ALWAYS   OFF

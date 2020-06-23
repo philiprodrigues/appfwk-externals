@@ -24,7 +24,9 @@ if [ ! -e "$SRC_DIR" ]; then
 fi
 
 set +eu
-source  /cvmfs/larsoft.opensciencegrid.org/products/setup
+source /cvmfs/dune.opensciencegrid.org/dunedaq/DUNE/products/setup
+# No cetbuildtools in the dunedaq products dir, so get it from larsoft
+source /cvmfs/larsoft.opensciencegrid.org/products/setup
 if [ "$?" != "0" ]; then
     exit $?
 fi
