@@ -2,7 +2,7 @@
 # fully annotated product_deps file.
 
 # Product specification
-parent ers v0_26_00
+parent ers v0_26_00a
 defaultqual e19
 
 # Table-file variable setup specification.
