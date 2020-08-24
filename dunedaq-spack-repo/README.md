@@ -20,14 +20,17 @@ In the UPS product build, I worked around this by just not depending on `gflags`
 * `cetmodules`
 * `hep-concurrency`
 
-I found these in the repository located at `/cvmfs/fermilab.opensciencegrid.org/packages/common/spack/rollout/NULL/var/spack/repos/fnal_art` which is a clone of the `https://cdcvs.fnal.gov/redmine/projects/spack-planning/repository/spack_art` git repo. There are no commits to `master` in that repo since Dec 2019 (but there are some on `feature/cetmodules_patches`, so I'm not sure what's up.
+I found these in the repository located at `/cvmfs/fermilab.opensciencegrid.org/packages/common/spack/rollout/NULL/var/spack/repos/fnal_art` which is a clone of the `https://cdcvs.fnal.gov/redmine/projects/spack-planning/repository/spack_art` git repo. There are no commits to `master` in that repo since Dec 2019 (but there are some on `feature/cetmodules_patches`, so I'm not sure what's up).
 
 ## Packages created for DUNE DAQ:
 
-* `appfwk`
-* `daq-buildtools`
 * `ers`
+  The HEAD of `DUNE-DAQ:dune/master` has the right commits to build with spack, but isn't tagged. Pointed at my fork for now, where the HEAD _is_ tagged
+* `appfwk`
+  Needs the commits at `philiprodrigues:develop` (also on the `spack-build` branch). Pointed at `develop` of my fork for now.
+* `daq-buildtools`
+  Needs the commits at `philiprodrigues:develop` (also on the `spack-build` branch). Pointed at `develop` of my fork for now.
 * `trace`
-
+  The HEAD of the `stable` branch builds, but isn't tagged, so the package is pointed at `stable` for the moment.
 
 
