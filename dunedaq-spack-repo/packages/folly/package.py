@@ -45,6 +45,8 @@ class Folly(CMakePackage):
     depends_on('libevent')
     depends_on('fmt')
 
+    patch('find-gflags-shared.diff')
+
     def cmake_args(self):
         return ['-DBUILD_SHARED_LIBS=ON',
                 '-DCMAKE_POSITION_INDEPENDENT_CODE=ON']

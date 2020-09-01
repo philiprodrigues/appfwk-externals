@@ -21,7 +21,6 @@ class Gflags(CMakePackage):
 
     depends_on('cmake@2.8.12:', type='build')
 
-    patch('rename-library.diff', when='@2.2.2')
     
     def cmake_args(self):
         return ['-DBUILD_SHARED_LIBS=ON',
