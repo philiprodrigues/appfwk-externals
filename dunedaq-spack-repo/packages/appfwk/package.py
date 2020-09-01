@@ -31,12 +31,13 @@ class Appfwk(CMakePackage):
     url      = "https://github.com/DUNE-DAQ/appfwk/archive/v1.1.0.tar.gz"
     git      = "https://github.com/philiprodrigues/appfwk.git"
 
+    version('spack-build', branch='spack-build')
     version('develop', branch='develop')
     version('1.1.0', sha256='3a88d45b5251748d0041fb7ad3df07c086d5acf3c27b1ca213887c3ad15bee98')
     version('1.0.0', sha256='2d61dd2d9b685351f840cf085606935960ab2e437ff10be14be1d67adeea0255')
 
     # FIXME: Add dependencies if required.
-    depends_on('daq-buildtools')
+    depends_on('daq-buildtools@spack-build')
     depends_on('boost')
     depends_on('folly')
     depends_on('trace@stable')

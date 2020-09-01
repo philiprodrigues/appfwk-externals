@@ -35,6 +35,7 @@ class DaqBuildtools(CMakePackage):
     # notify when the package is updated.
     # maintainers = ['github_user1', 'github_user2']
 
+    version('spack-build', branch='spack-build')
     version('develop', branch='develop')
     version('1.1.1', sha256='541934fdfa8bb2937bf44d12173094525374e38ddd2dbfb43ce1c1e062ae5c19')
     version('1.1.2', sha256='4b478705bcd4ec23a078ca946ca8a3a35e98094ffdd5eb3f23ebdf0d5f00aa6f')
