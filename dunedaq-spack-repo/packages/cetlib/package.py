@@ -49,6 +49,8 @@ class Cetlib(CMakePackage):
     depends_on('sqlite')
     depends_on('perl')  # Module skeletons, etc.
 
+    patch('cetlib-readdir.patch')
+
     if 'SPACKDEV_GENERATOR' in os.environ:
         generator = os.environ['SPACKDEV_GENERATOR']
         if generator.endswith('Ninja'):
