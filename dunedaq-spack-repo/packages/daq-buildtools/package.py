@@ -22,7 +22,6 @@
 
 from spack import *
 
-
 class DaqBuildtools(CMakePackage):
     """FIXME: Put a proper description of your package here."""
 
@@ -43,17 +42,3 @@ class DaqBuildtools(CMakePackage):
     version('1.1.4', sha256='4e330230f850e0322885a2a602d121cacad1c390123d05b7c40b79a10ebba72a')
     version('1.1.5', sha256='dcf5345fbb2a3ffd6de029c58ea24fa261a53e7a6f67ae858d06619f1c701efd')
     version('1.1.6', sha256='1364ae589fc5484b4312893d9d5d278296e4403bd17649c4414f3547994640f4')
-    
-    def setup_dependent_build_environment(self, env, dependent_spec):
-        env.append_path('CMAKE_MODULE_PATH', '{0}/lib64/cmake'
-                        .format(self.prefix))
-
-    def setup_dependent_run_environment(self, env, dependent_spec):
-        env.append_path('CMAKE_MODULE_PATH', '{0}/lib64/cmake'
-                        .format(self.prefix))
-
-    def setup_run_environment(self, env):
-        env.append_path('CMAKE_MODULE_PATH', '{0}/lib64/cmake'
-                        .format(self.prefix))
-
-        
