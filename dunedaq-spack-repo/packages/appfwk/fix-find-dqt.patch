@@ -1,0 +1,10 @@
+--- a/CMakeLists.txt	2020-09-21 12:05:16.278511028 -0400
++++ b/CMakeLists.txt	2020-09-21 12:07:19.907327971 -0400
+@@ -2,6 +2,6 @@
+ project(appfwk VERSION 1.1.0)
+ 
+ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../daq-buildtools/cmake ${CMAKE_MODULE_PATH})
+-include(DAQ)
++find_package(daq-buildtools)
+ 
+ daq_setup_environment()
