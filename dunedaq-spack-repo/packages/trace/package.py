@@ -34,8 +34,3 @@ class Trace(CMakePackage):
     version('3.15.09', commit='f429a6a8b52925c31678cab5643f67df16f06fd5')
 
     patch('install-scripts.diff')
-        
-    def setup_run_environment(self, env):
-        trace_fns=self.prefix.bin.join("trace_functions.sh")
-        if os.path.isfile(trace_fns):
-            env.extend(EnvironmentModifications.from_sourcing_file(trace_fns))
