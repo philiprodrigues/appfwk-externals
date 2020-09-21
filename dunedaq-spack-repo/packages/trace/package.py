@@ -33,4 +33,7 @@ class Trace(CMakePackage):
     version('stable', branch='stable')
     version('3.15.09', commit='f429a6a8b52925c31678cab5643f67df16f06fd5')
 
-    patch('install-scripts.diff')
+    patch('install-exec.diff', when='3.15.09')
+    patch('install-scripts.diff', when='stable')
+
+    depends_on('cetmodules@1.01.01:', type='build')
