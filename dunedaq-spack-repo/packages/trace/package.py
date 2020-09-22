@@ -36,4 +36,4 @@ class Trace(CMakePackage):
     patch('install-exec.diff', when='3.15.09')
     patch('install-scripts.diff', when='stable')
 
-    depends_on('cetmodules@1.01.01:', type='build')
+    depends_on('cetmodules@1.01.01:', when='3.15.09', type='build')
