@@ -114,3 +114,16 @@ index 1689f9a..b72ff3b 100644
  
  set(Boost_USE_STATIC_LIBS "@FOLLY_BOOST_LINK_STATIC@")
  find_dependency(Boost 1.51.0 MODULE
+diff -Naur a/folly/CMakeLists.txt b/folly/CMakeLists.txt
+--- a/folly/CMakeLists.txt
++++ b/folly/CMakeLists.txt
+@@ -27,7 +27,7 @@
+ )
+
+ add_subdirectory(experimental/exception_tracer)
+-add_subdirectory(logging/example)
++#add_subdirectory(logging/example)
+
+ if (PYTHON_EXTENSIONS)
+   # Create tree of symbolic links in structure required for successful
+
